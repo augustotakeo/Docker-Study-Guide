@@ -1,0 +1,10 @@
+ARG: Instruction used to define a variable that users can pass at build-time to the builder 
+with the docker build command using the --build-arg <varname>=<value> flag. The variable is 
+valid only in the build stage it’s defined in, and prior use of the variable before it is 
+defined results in an empty string.
+
+ENV: Instruction is used to define an environment variable that will be available for all 
+subsequent instructions in the build stage. This variable is persisted in containers created 
+from the image built using this instruction. Its value can be changed at runtime using the 
+env option with docker run. If the variable is only needed during build, and not in the final 
+image, you can set the value of this variable in a single command or use the ARG instruction.
