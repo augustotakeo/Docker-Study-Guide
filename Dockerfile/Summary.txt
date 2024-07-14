@@ -8,3 +8,23 @@ subsequent instructions in the build stage. This variable is persisted in contai
 from the image built using this instruction. Its value can be changed at runtime using the 
 env option with docker run. If the variable is only needed during build, and not in the final 
 image, you can set the value of this variable in a single command or use the ARG instruction.
+
+RUN instruction is used to execute any commands to create a new layer on top of the current 
+image. It can be on shell form or exec form. There are three options --mount, --network, 
+--security
+    - mount allows you to create a filesystem mount that the build can access.
+        1. cache type mounts a temporary directory to cache directories for compilers 
+           and package managers
+
+COPY instruction is used to copy new files or directories from source and add them to the 
+filesystem of the container at the path of destiny. By default it copies from the build 
+context. The options are --from, 
+    - from allows you to copy from an image, a build stage or a named context. 
+
+USER instruction is used to set a user name and optionally a user group as the default user 
+and group for the remainder of the stage.This user is used for the RUN  instructions and at 
+runtime, runs the relevant ENTRYPOINT and CMD  commands.
+
+ENTRYPOINT instruction is used to configure a container that will run as an executable. 
+Options passed to docker run <image> will be appended after all elements in an exec form. 
+The –entrypoint option of docker run will override the instruction of ENTRYPOINT
