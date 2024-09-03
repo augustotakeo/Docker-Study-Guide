@@ -8,8 +8,7 @@ They are:
 
 - **Self-contained**: It contains everything it needs to run with no reliance on any pre-installed dependency on the host machine.
 
-- **Portable**: It works the same way on the development mach.ine, data center or anywhere in the 
-cloud.
+- **Portable**: It works the same way on the development machine, data center or anywhere in the cloud.
 
 - **Isolated**: One container has minimal influence on the host machine or another container, 
 increasing the security of the application.
@@ -18,9 +17,7 @@ increasing the security of the application.
 others.
 
 ### Virtual Machines x Containers
-A virtual machine is an entire operating system with its own kernel, hardware driver, programs, 
-and applications. Despite being isolated, containers run on the same operating system as the 
-host. Using a container instead of VM to run a single application can save costs.
+A virtual machine is an entire operating system with its own kernel, hardware driver, programs, and applications. Despite being isolated, containers run on the same operating system as the host. Using a container instead of VM to run a single application can save costs.
 
 ### Image
 It’s a standardized package that contains all the files, binaries, libraries and configuration 
