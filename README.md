@@ -51,3 +51,15 @@ changes in a mounted directory of the container are also seen on the host machin
 if you mount the same directory across container restarts, the same files would always be seen.
 There are two types of volumes: volume mount that is completely managed by docker and bind 
 mount that is dependent on the directory structure and os of the host machine.
+
+#### Scenarios when mounting volumes
+- Container's files are obcured by the content of non-empty volume
+- Container's files are copied into empty volumes. volume-nocopy option prevent this from happening
+- Anounymous volumes are created when a volume is not specified.
+- When a container created using --rm option is removed, the anounymous volume is removed as well
+- Use --volumes-from [container] to mount the volumes of this container
+- Use readonly (or ro) to give only read access to the container (using inspect in the container you can see in the "Mounts" region the '"RW": false',)
+
+#### Scenarios when using bind mount
+- Pre-existeing files in the container are obscured by the mount.
+- Use readonly (or ro) to give only read access to the container
